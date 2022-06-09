@@ -3,6 +3,8 @@ const app = express();
 const {Server} = require('socket.io');
 const http = require('http');
 
+const port = process.env.PORT || 3001;
+
 const cors = require("cors");
 
 app.use(cors());
@@ -29,4 +31,4 @@ app.use((req, res, next) => {
     next();
 })
 
-server.listen(process.env.PORT || 3001, () => console.log(`Server is running`))
+server.listen(port, () => console.log(`Server is running at port ${port}`))

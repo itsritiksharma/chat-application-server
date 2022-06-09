@@ -29,4 +29,4 @@ app.use((req, res, next) => {
     next();
 })
 
-server.listen(3001, () => console.log(`Server is running`))
+server.listen(process.env.PORT || 3001, () => console.log(`Server is running`))
